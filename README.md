@@ -4,8 +4,8 @@ Proyecto de ingeniería de software, sobre la gestión de proyectos extensionist
 > ## Models
 > Project
 > * id
-> * name ()
-> * area ()
+> * name 
+> * area 
 > * start_date
 > * end_date
 > * fundamentation
