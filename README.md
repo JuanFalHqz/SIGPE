@@ -20,7 +20,7 @@ Proyecto de ingeniería de software, sobre la gestión de proyectos extensionist
 > * descriptions
 > * count_persons
 > * Fk
->   * manager
+>   * manager (Member)
 >   * project
 
 
