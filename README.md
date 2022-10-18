@@ -28,8 +28,15 @@ Proyecto de ingeniería de software, sobre la gestión de proyectos extensionist
 > * id
 > * evidence_name
 > * media
+> * (ForeignKey)
+>   * project
 
-> Evidence
+> Member
 > * id
-> * evidence_name
-> * media
+> * All default django user data 
+> * ci
+> * category
+> * area
+> * position
+> * (Many to many)
+>   * project
