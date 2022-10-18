@@ -15,21 +15,21 @@ Proyecto de ingeniería de software, sobre la gestión de proyectos extensionist
 
 > Activities
 > * id
-> * activities_name ()
-> * realization_date ()
-> * descriptions ()
-> * count_persons ()
+> * activities_name
+> * realization_date
+> * descriptions
+> * count_persons
 > * Fk
-> * Fk * manager
-> * Fk * project
+>   * manager
+>   * project
 
 
 > Evidence
 > * id
-> * evidence_name ()
-> * media ()
+> * evidence_name
+> * media
 
 > Evidence
 > * id
-> * evidence_name ()
-> * media ()
+> * evidence_name
+> * media
