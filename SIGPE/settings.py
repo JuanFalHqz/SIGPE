@@ -30,10 +30,14 @@ THIRD_APPS=[
 
 ]
 LOCAL_APPS=[
-    'Main.apps.MainConfig',
+    'Core.ProjectProcesses',
+    'Core.MembersProcesses',
+    'Core.ActivitiesProcesses',
+    'Core.EvidencesProcesses',
+    'Core.CandidatesProcesses',
+    'Core.User',
 ]
 INSTALLED_APPS = BASE_APPS+THIRD_APPS+LOCAL_APPS
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,7 +74,7 @@ WSGI_APPLICATION = 'SIGPE.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = db.POSTGRES
+DATABASES = db.SQLITE
 
 
 # Password validation
@@ -113,3 +117,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'User.User'
