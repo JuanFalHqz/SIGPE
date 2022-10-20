@@ -1,7 +1,6 @@
 from Core.ProjectProcesses.models import Project
 from django.db import models
 
-
 # Create your models here.
 class Candidate(models.Model):
     projects = models.ManyToManyField(Project)

@@ -27,7 +27,7 @@ BASE_APPS = [
     'django.contrib.staticfiles',
 ]
 THIRD_APPS=[
-
+    'widget_tweaks',
 ]
 LOCAL_APPS=[
     'Core.ProjectProcesses',
@@ -36,6 +36,7 @@ LOCAL_APPS=[
     'Core.EvidencesProcesses',
     'Core.CandidatesProcesses',
     'Core.User',
+    'Core.Authentication'
 ]
 INSTALLED_APPS = BASE_APPS+THIRD_APPS+LOCAL_APPS
 
@@ -112,6 +113,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+#Permite cargar los datos estáticos en la carpeta static.
+STATICFILES_DIRS = [
+    BASE_DIR/'static',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
