@@ -1,0 +1,46 @@
+{% extends 'List.html' %}
+{% load static %}
+{% block columns %}
+    <tr>
+        <th scope="col" style="width:min-content;">
+            <input type="checkbox" name="all-elements" id="all-elements">
+        </th>
+        <th scope="col" style="width: 15%;">Imagen</th>
+        <th scope="col" style="width: 10%;">Nombre</th>
+        <th scope="col" style="width: 20%;">Área</th>
+        <th scope="col" style="width: 25%;">Fecha de inicio</th>
+        <th scope="col" style="width:min-content;">Operaciones</th>
+    </tr>
+{% endblock %}
+
+{% block rows %}
+    {% if project_list.count > 0 %}
+        {% for obj in object_list %}
+            <tr id="row-{{ obj.pk }}">
+                <td>
+                    <input type="checkbox" name="select" value="{{ obj.pk }}" class="checkbox">
+                </td>
+                <td>
+                    <img src="{{ obj.get_image }}" class="img-fluid mx-auto" style="width: 20px; height: 20px;">
+                </td>
+                <td>{{ obj.name }}</td>
+                <td>{{ obj.area }}</td>
+                <td>{{ obj.start_date }}</td>
+                <td>
+                    <a href="" class="btn btn-sm btn-primary">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a href="{% url 'project_update_root' obj.pk %}" class="btn btn-sm btn-success">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <!--% url 'erp:product_delete' obj.id %-->
+                    <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-delete"
+                            id="btn-delete"
+                            onclick="eliminarObject({{ obj.pk }},'{% url 'project_delete_root' %}','{{ obj.name }}')">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

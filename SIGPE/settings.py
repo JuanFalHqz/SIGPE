@@ -1,4 +1,7 @@
 from pathlib import Path
+
+from django.conf.global_settings import LOGIN_URL
+
 from Config import db
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -36,7 +39,8 @@ LOCAL_APPS=[
     'Core.EvidencesProcesses',
     'Core.CandidatesProcesses',
     'Core.User',
-    'Core.Authentication'
+    'Core.Authentication',
+    'Core.Home'
 ]
 INSTALLED_APPS = BASE_APPS+THIRD_APPS+LOCAL_APPS
 
@@ -100,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -115,7 +119,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 #Permite cargar los datos estáticos en la carpeta static.
 STATICFILES_DIRS = [
-    BASE_DIR/'static',
+    BASE_DIR/'static/',
 ]
 
 # Default primary key field type
@@ -123,3 +127,16 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'User.User'
+
+# variable con la dirección para redireccionar cuando se autentica un usuario
+LOGIN_REDIRECT_URL = '/dashboard/'
+
+# variable con la dirección para redireccionar cuando no se está autenticado y accede a cualquier parte de la web
+LOGIN_URL = '/login/'
+
+# variable con la dirección para redireccionar cuando se desautentica un usuario
+LOGOUT_REDIRECT_URL = '/login/'
+
+# variables para archivos media
+MEDIA_ROOT = BASE_DIR/'media/'
+MEDIA_URL = '/media/'
