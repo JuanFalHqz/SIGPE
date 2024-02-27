@@ -1,2 +1,2 @@
 # SIGPE
-**Parte pública pemitida**
+**Parte pública permitida**
